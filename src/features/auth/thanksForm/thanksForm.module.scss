@@ -1,0 +1,27 @@
+.thanksForm {
+  text-align: center;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 110%;
+  background: linear-gradient(177deg, #e51726 0%, #d4208c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include media(lg) {
+    font-size: 77px;
+  }
+}
+
+.description {
+  font-weight: 700;
+  font-size: 14px;
+  color: #3a3a3a;
+
+  @include media(lg) {
+    font-size: 28px;
+  }
+}

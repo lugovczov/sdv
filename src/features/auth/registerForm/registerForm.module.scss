@@ -1,0 +1,89 @@
+.registerForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 620px;
+
+  .title {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 141%;
+    text-align: center;
+    color: #3a3a3a;
+    margin-bottom: 15px;
+
+    @include media(lg) {
+      font-size: 24px;
+      line-height: 117%;
+      margin-bottom: 30px;
+    }
+  }
+
+  form {
+    text-align: center;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  margin-bottom: 15px;
+  width: 100%;
+
+  &.withError {
+    .input {
+      border-color: #FFBFBF;
+    }
+
+    .errorIcon,
+    .errorMessage {
+      opacity: 1;
+    }
+  }
+
+  @include media(lg) {
+    margin-bottom: 30px;
+  }
+}
+
+.input {
+  width: 100%;
+  text-align: center;
+  padding: 5px 20px;
+  border-bottom: 1px solid #3a3a3a;;
+  font-size: 14px;
+  line-height: 157%;
+  color: #3a3a3a;
+  background: transparent;
+  transition: border-color 0.2s ease-in-out;
+
+  &::placeholder {
+    color: #b3b3b3;
+  }
+
+  @include media(lg) {
+    font-size: 18px;
+    line-height: 133%;
+  }
+}
+
+.errorIcon {
+  position: absolute;
+  top: 7px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.errorMessage {
+  margin-top: 12px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  color: #f22533;
+  font-size: 12px;
+  line-height: 150%;
+  text-align: center;
+}

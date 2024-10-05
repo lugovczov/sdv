@@ -1,0 +1,18 @@
+$breakpoints: (
+        sm: 576px, // Small devices (tablets, 576px and up)
+        md: 768px, // Medium devices (desktops, 768px and up)
+        lg: 992px, // Large devices (larger desktops, 992px and up)
+        xl: 1200px, // Extra large devices (large desktops, 1200px and up)
+        xxl: 1400px // Extra extra large devices (very large desktops, 1400px and up)
+);
+
+@mixin media($breakpoint) {
+  $query: map-get($breakpoints, $breakpoint);
+  @if $query {
+    @media (min-width: $query) {
+      @content;
+    }
+  } @else {
+    @warn "No matching breakpoint found for '#{$breakpoint}'";
+  }
+}

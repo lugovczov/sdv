@@ -1,0 +1,27 @@
+@import './breakpoints';
+
+$container-padding: (
+        sm: 15px,
+        md: 30px,
+        lg: 45px,
+        xl: 70px,
+        xxl: 90px
+);
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  // Default padding for the smallest devices
+  padding-left: map-get($container-padding, sm);
+  padding-right: map-get($container-padding, sm);
+
+  // Responsive padding based on viewport size
+  @each $breakpoint, $min-width in $breakpoints {
+    @media (min-width: $min-width) {
+      padding-left: map-get($container-padding, $breakpoint);
+      padding-right: map-get($container-padding, $breakpoint);
+    }
+  }
+}
