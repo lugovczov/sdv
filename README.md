@@ -1,3 +1,10 @@
+# Deploy link - https://sdv-hazel.vercel.app/
+
+# Run dev server
+
+1. npm install
+2. npm run dev
+
 # FSD pattern
 
 ## Folder structure
